@@ -1,0 +1,101 @@
+/* app css stylesheet */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 40px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 40px;
+  background-color: #f5f5f5;
+}
+
+body > .content {
+  padding: 50px 0 0 0;
+}
+.container-fluid {
+	#margin-left: 15px; 
+	#margin-right: 15px;
+}
+
+.content .text-muted {
+  margin: 10px 0;
+}
+
+.footer > .content {
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-top : 0px;
+  padding-bottom : 0px;
+}
+
+.padless {
+  padding : 0;
+  margin : auto;
+}
+
+.app-logo {
+  padding : 5px;
+}
+.app-head {
+  padding-left: 5px;
+}
+
+.loadingContent {
+	margin : 100px auto;
+	text-align : center;
+}
+
+/* Error Message Display */
+.error {
+	display : block;
+	width : 80%;
+	margin-left: auto ;
+	margin-right: auto ;
+}
+
+.error, .error-content  {
+	text-align : center;
+	font-size : 16;
+	color : #C00000;
+}
+
+.error-content  {
+	margin-top : 100px;
+}
+
+/*Thuligal Styling*/
+#thuligal ul li a {
+	color : #555;
+	text-decoration : none;
+}
+
+#thuligal ul li a:hover, #thuligal ul li a:focus {
+  text-decoration: none;
+  background-color: #F7EB66;
+}
+
+.list-stripped  > li:nth-child(even)  > a {
+	background-color: #f5f5f5;
+}
+
+.item-content {
+	background-color: #f5f5f5;
+	padding : 20px 5px;
+	border : 1px solid #ddd;
+	font-size : 16px;
+}
+
+.item-head {
+	background-color: #E2E1E1;
+	padding : 10px 5px;
+	margin : 0px;
+	border : 1px solid #ddd;
+}
