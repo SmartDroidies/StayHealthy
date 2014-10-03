@@ -1,3 +1,8 @@
+/* Global Styling */
+body, h1, h2, h3, h4, h5, h6  {
+    font-family: Helvetica, Arial, sans-serif!important;
+}
+
 /* app css stylesheet */
 html {
   position: relative;
@@ -28,11 +33,15 @@ body {
 }
 
 .footer > .content {
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 5px;
+  padding-left: 5px;
   padding-top : 0px;
   padding-bottom : 0px;
 }
+
+.nav-footer > li > a {
+  color : #333;
+}  
 
 .padless {
   padding : 0;
@@ -46,8 +55,8 @@ body {
   padding-left: 5px;
 }
 
-.content {
-	margin : 100px auto;
+body > .content {
+  padding: 50px 0 0 0;
 }
 
 /* Error Message Display */
@@ -66,5 +75,14 @@ body {
 
 .error-content  {
 	margin-top : 100px;
+}
+
+/* Home Menu Navigation Styling */
+.nav-icon {
+	padding : 5px;
+}
+
+.list-group {
+  margin-top : 5px;
 }
 
