@@ -14,6 +14,7 @@ healthyControllers.controller('ArticlesCtrl', ['$scope', 'FeedService',
   function($scope, Feed) {
 	$scope.loadFeed = function () {         
 		Feed.parseFeed().then(function (res) {             
+			console.log(JSON.stringify(res.data.responseData.feed.entries));
 			$scope.feeds = res.data.responseData.feed.entries;         
 		});     
 	}

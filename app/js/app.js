@@ -17,13 +17,11 @@ healthyApp.config(['$routeProvider',
         templateUrl: 'partials/articles.html',
         controller: 'ArticlesCtrl'
       }).
-      when('/category/:category', {
-        templateUrl: 'partials/category-items.html',
-        controller: 'CtgryItemsCtrl'
+      when('/aboutus', {
+        templateUrl: 'partials/aboutus.html'
       }).
-      when('/item/:category/:id', {
-        templateUrl: 'partials/item.html',
-        controller: 'ItemDetailCtrl'
+      when('/contactus', {
+        templateUrl: 'partials/contactus.html'
       }).
       otherwise({
         redirectTo: '/home'
