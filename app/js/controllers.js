@@ -2,21 +2,29 @@
 
 /* Controllers */
 
-var healthyControllers = angular.module('healthyControllers', []);
+var healthyControllers = angular.module('healthyControllers',  []);
 
 healthyControllers.controller('HomeCtrl', ['$scope', 
   function($scope) {
 	$scope.item = "Test Data";
   }]
 );
-
-healthyControllers.controller('ArticlesCtrl', ['$scope', 'FeedService', 
-  function($scope, Feed) {
+	
+healthyControllers.controller('ArticlesCtrl', ['$scope', 'FeedService',  'cacheService',
+  function($scope, Feed, cacheService) {
 	$scope.loadFeed = function () {         
-		Feed.parseFeed().then(function (res) {             
-			console.log(JSON.stringify(res.data.responseData.feed.entries));
-			$scope.feeds = res.data.responseData.feed.entries;         
-		});     
+		var cache = cacheService.get('feed-data');
+		if(cache) {
+			console.log('Loading data from cache');
+			$scope.feeds = cache;
+		} else {
+			Feed.parseFeed().then(function (res) {             
+				console.log(JSON.stringify(res.data.responseData.feed.entries));
+				cacheService.put('feed-data', res.data.responseData.feed.entries);
+				$scope.feeds = res.data.responseData.feed.entries;         
+			});     
+		}
+
 	}
 	//Loading the feed
 	$scope.loadFeed();

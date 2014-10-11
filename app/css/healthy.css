@@ -89,3 +89,9 @@ body > .content {
 .about {
 	text-align : center;
 }
+
+/* Article Styling */
+.feed-list {
+	margin : 3px;
+}
+

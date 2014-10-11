@@ -1,18 +1,8 @@
-<div class="row">
-	<div id="articles" class="col-md-12">
-		<!--Body content-->
-		<div class="list-group">
-			<div class="media" ng-repeat="feed in feeds">
-			  <a class="pull-left" href="#">
-				<img class="media-object" src="..." alt="...">
-			  </a>
-			  <div class="media-body">
-				<h5 class="media-heading">{{feed.title}}</h5>     
-				<p class="text-left">{{feed.contentSnippet}}</p>     
-				<span class="small">{{feed.publishedDate}}</span> 
-			  </div>
-			</div>
-		</div>	
-	</div>
-</div>
-
+<!--Body content-->
+<div class="list-group feed-list" ng-repeat="feed in feeds">
+	<a href="#" class="list-group-item">
+		<span class="small">{{feed.publishedDate}}</span> 
+		<h4 class="list-group-item-heading">{{feed.title}}</h4>
+		<p class="list-group-item-text">{{feed.contentSnippet}}</p>
+	</a>
+</div>	
