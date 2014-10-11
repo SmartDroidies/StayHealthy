@@ -1,8 +1,8 @@
 <!--Body content-->
 <div class="list-group feed-list" ng-repeat="feed in feeds">
-	<a href="#" class="list-group-item">
-		<span class="small">{{feed.publishedDate}}</span> 
+	<a href="#/article/{{$index + 1}}" class="list-group-item">
+		<span class="small">{{feed.publishedDate | date:'mediumDate'}}</span> 
 		<h4 class="list-group-item-heading">{{feed.title}}</h4>
-		<p class="list-group-item-text">{{feed.contentSnippet}}</p>
+		<p ng-bind-html="feed.contentSnippet" class="list-group-item-text" ></p>
 	</a>
 </div>	

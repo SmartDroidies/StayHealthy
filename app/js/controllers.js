@@ -19,7 +19,7 @@ healthyControllers.controller('ArticlesCtrl', ['$scope', 'FeedService',  'cacheS
 			$scope.feeds = cache;
 		} else {
 			Feed.parseFeed().then(function (res) {             
-				console.log(JSON.stringify(res.data.responseData.feed.entries));
+				//console.log(JSON.stringify(res.data.responseData.feed.entries));
 				cacheService.put('feed-data', res.data.responseData.feed.entries);
 				$scope.feeds = res.data.responseData.feed.entries;         
 			});     
@@ -29,6 +29,21 @@ healthyControllers.controller('ArticlesCtrl', ['$scope', 'FeedService',  'cacheS
 	//Loading the feed
 	$scope.loadFeed();
 }]);
+
+
+//Controller to collect individual article
+healthyControllers.controller('ArticleItemCtrl', ['$scope', '$routeParams', 'cacheService',
+  function($scope, $routeParams, cacheService) {
+	$scope.collectArticle = function () {    
+		var cache = cacheService.get('feed-data');
+		$scope.article = cache[$routeParams.title-1];
+		console.log($scope.article);
+	}
+	console.log('Route Params : ' + $routeParams.title);	
+	//Collecting the particular article
+	$scope.collectArticle();
+}]);
+
 
 //Factory for loading the feed
 healthyControllers.factory ('FeedService', ['$http', function ($http) {

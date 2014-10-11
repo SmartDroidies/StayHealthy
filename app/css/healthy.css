@@ -91,7 +91,7 @@ body > .content {
 }
 
 /* Article Styling */
-.feed-list {
+.feed-list , .article {
 	margin : 3px;
 }
 

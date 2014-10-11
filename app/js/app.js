@@ -1,6 +1,6 @@
 'use strict';
 /* App Module */
-var healthyApp = angular.module('healthyApp', ['ngRoute','healthyControllers','cacheService']);
+var healthyApp = angular.module('healthyApp', ['ngRoute','ngSanitize','healthyControllers','cacheService']);
 
 healthyApp.config(['$routeProvider',
 		function ($routeProvider) {
@@ -12,6 +12,10 @@ healthyApp.config(['$routeProvider',
 			when('/articles', {
 				templateUrl : 'partials/articles.html',
 				controller : 'ArticlesCtrl'
+			}).
+			when('/article/:title', {
+				templateUrl: 'partials/acticle.html',
+				controller: 'ArticleItemCtrl'
 			}).
 			when('/aboutus', {
 				templateUrl : 'partials/aboutus.html'
