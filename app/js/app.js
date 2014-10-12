@@ -1,6 +1,6 @@
 'use strict';
 /* App Module */
-var healthyApp = angular.module('healthyApp', ['ngRoute','ngSanitize','healthyControllers','cacheService']);
+var healthyApp = angular.module('healthyApp', ['ngRoute','ngSanitize','healthyControllers','cacheService', 'healhtyFilters']);
 
 healthyApp.config(['$routeProvider',
 		function ($routeProvider) {

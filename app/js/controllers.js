@@ -15,7 +15,7 @@ healthyControllers.controller('ArticlesCtrl', ['$scope', 'FeedService',  'cacheS
 	$scope.loadFeed = function () {         
 		var cache = cacheService.get('feed-data');
 		if(cache) {
-			console.log('Loading data from cache');
+			//console.log('Loading data from cache');
 			$scope.feeds = cache;
 		} else {
 			Feed.parseFeed().then(function (res) {             
@@ -24,7 +24,6 @@ healthyControllers.controller('ArticlesCtrl', ['$scope', 'FeedService',  'cacheS
 				$scope.feeds = res.data.responseData.feed.entries;         
 			});     
 		}
-
 	}
 	//Loading the feed
 	$scope.loadFeed();
@@ -32,14 +31,24 @@ healthyControllers.controller('ArticlesCtrl', ['$scope', 'FeedService',  'cacheS
 
 
 //Controller to collect individual article
-healthyControllers.controller('ArticleItemCtrl', ['$scope', '$routeParams', 'cacheService',
-  function($scope, $routeParams, cacheService) {
+healthyControllers.controller('ArticleItemCtrl', ['$scope', '$routeParams', 'FeedService', 'cacheService',
+  function($scope, $routeParams, Feed, cacheService) {
 	$scope.collectArticle = function () {    
 		var cache = cacheService.get('feed-data');
-		$scope.article = cache[$routeParams.title-1];
-		console.log($scope.article);
+		if(cache) {
+			//console.log('Loading data from cache');
+			$scope.feeds = cache;
+			$scope.article = cache[$routeParams.title-1];
+		} else {
+			Feed.parseFeed().then(function (res) {             
+				cacheService.put('feed-data', res.data.responseData.feed.entries);
+				cache = res.data.responseData.feed.entries;         
+				$scope.article = cache[$routeParams.title-1];
+			});     
+		}
+		//console.log($scope.article);
 	}
-	console.log('Route Params : ' + $routeParams.title);	
+	//console.log('Route Params : ' + $routeParams.title);	
 	//Collecting the particular article
 	$scope.collectArticle();
 }]);

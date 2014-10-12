@@ -95,3 +95,34 @@ body > .content {
 	margin : 3px;
 }
 
+.article  > p  > div > a  > img {
+	max-width : 100%;
+	display:inline-block;
+    margin-left:auto; 
+    margin-right:auto;
+}
+
+.feed-date {
+	position: absolute;
+	right: 5px;
+	bottom: 5px;
+	font-size : 12px;
+	font-weight : bold;
+}
+
+.feed-icon {
+	width : 60px;
+	height : 50px;
+}
+
+#feed-snippet {
+	display: table-cell;
+    width: 90%;
+	vertical-align: top;	
+}
+
+#feed-icon {
+	display: table-cell;
+    width: 100px;
+	margin-left : 10px;
+}
