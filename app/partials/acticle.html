@@ -1,6 +1,7 @@
 <!--Body content-->
 <div class="article">
-	<h4 >{{article.title}}</h4>
+	<h4>{{article.title}}</h4>
+	<span class="small">{{article.publishedDate | todate}}</span> 
 	<p ng-bind-html="article.content" ></p>
 	<span class="small">{{article.publishedDate | date:'mediumDate'}}</span> 
 	<a href="{{article.link}}" target="_blank">View More</span> 

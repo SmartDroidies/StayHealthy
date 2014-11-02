@@ -46,7 +46,7 @@ healthyControllers.controller('ArticleItemCtrl', ['$scope', '$routeParams', 'Fee
 				$scope.article = cache[$routeParams.title-1];
 			});     
 		}
-		//console.log($scope.article);
+		console.log($scope.article);
 	}
 	//console.log('Route Params : ' + $routeParams.title);	
 	//Collecting the particular article
@@ -58,7 +58,7 @@ healthyControllers.controller('ArticleItemCtrl', ['$scope', '$routeParams', 'Fee
 healthyControllers.factory ('FeedService', ['$http', function ($http) {
 	return {
 		parseFeed: function () {	
-			var url = 'http://stayhealthy.careerwrap.com/feed'
+			var url = 'http://tips2stayhealthy.com/feed/'
 			return $http.jsonp('http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=50&callback=JSON_CALLBACK&q=' + encodeURIComponent(url));
 		}
 	}
